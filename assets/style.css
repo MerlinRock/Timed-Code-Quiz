@@ -1,0 +1,48 @@
+.text-center {
+    background-color:darkred;
+    height: 55px;
+}
+
+h1 {
+    color:white;
+}
+
+body {
+    background-color: lightgray;
+}
+
+button {
+    background-color: white;
+    color: black;
+    
+}
+
+.myStartButton {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.myButtons {
+    text-align: center;
+    background-color:darkgrey;
+    ;
+}
+
+.questions {
+    text-align: center;
+    font-size: 25px;
+}
+
+.hidden {
+    display: none;
+    background-color:darkgrey;
+}
+
+.startBtn {
+    border-radius: 6px;
+}
+
+.allOtherBtn {
+    border-radius: 10px;
+    margin-bottom: 2px;
+}
