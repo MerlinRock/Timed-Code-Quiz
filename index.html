@@ -19,27 +19,25 @@
         <section rows="1" class=myStartButton>
             <p>
             <button class="scores">View Scores</button>
-            <button onclick="startQuiz(), loopQuestions()" id="start" class="startBtn">Start Quiz</button>
-            <textarea class="timerBox" rows="1">Timer</textarea>
+            <button onclick="startQuiz()" id="startEl" class="startBtn">Start Quiz</button>
+            <button class="timerBox" rows="1">Timer</button>
             </p>
         </section>
 
-        <section id="questionSection" class="hidden">
-            <p id="question" class="questions col-12">Question
-                <card></card>
-            </p>
+        <section id="questionSectionEl" class="hidden">
+            <p id="questionEl" class="questions col-12"></p>
 
             <section class="myButtons">
-                <button id="btn1" type="button" class="allOtherBtn">Click Me!!!!!!!!!!!!!!</button>
+                <button onclick="loopQuestions()" id="btn1El" type="button" class="allOtherBtn">Click Me!!!!!!!!!!!!!!</button>
             </section>
             <section class="myButtons">
-                <button id="btn2" type="button" class="allOtherBtn">Click Me!????</button>
+                <button id="btn2El" type="button" class="allOtherBtn">Click Me!????</button>
             </section>
             <section class="myButtons">
-                <button id="btn3" type="button" class="allOtherBtn">Click Me!</button>
+                <button id="btn3El" type="button" class="allOtherBtn">Click Me!</button>
             </section>
             <section class="myButtons">
-                <button id="btn4" type="button" class="allOtherBtn">Click Me!</button>
+                <button id="btn4El" type="button" class="allOtherBtn">Click Me!</button>
             </section>
 
         </section>

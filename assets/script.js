@@ -1,48 +1,72 @@
 // var timer = setInterval(myTimer, 1000)
 
-// var questionsec = document.querySelector("#questionSection")
+// var questionsec = document.querySelector("#questionSectionEl")
 
-var score = 0
+
+var currentQuestion = 0
+var currentAnswer = 0
+correct = 0
+wrong = 0
 
 // list of available questions
 var arrayQuestions = [
-    "Commonly used data types DO NOT include:",
-     "A very useful tool used during development and debugging for printing content to the debugger is:",
-     "The condition in an if/else statement is enclosed within _____.",
-     "String values must be enclosed within _____ when being assigned to variables.",
-     "Arrays in JavaScript can be used to store _____."
+    {
+        question: "Commonly used data types DO NOT include:",
+        answer1: "alerts"
+    },
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        answer2: "console.log"
+    },
+    {
+        question: "The condition in an if/else statement is enclosed within _____.",
+        answer3: "parentheses"
+    },
+    {
+        question: "String values must be enclosed within _____ when being assigned to variables.",
+        answer4: "quotes"
+    },
+    {
+        question: "Arrays in JavaScript can be used to store _____.",
+        answer5: "all of the above"
+    }
 ]
 
+var allAnswers = ["booleans", "integers", "strings", "JavaScript", "terminal/bash", "all of the above", "alerts", "for loops", "console.log", "commas", "curly brackets", "quotes", "parentheses", "square brackets", ""]
 
 
-// function.promt() {
-//     // Go through a collection of questions
-//     var question = document.getElementById("question");
-//     var answer1 = document.getElementById("answer1");
-//     var answer2 = document.getElementById("answer2");
-//     var answer3 = document.getElementById("answer3");
-
-//     question.innerHTML = 
-
-
-// }
 
 function loopQuestions() {
-    for (i = 0; i <= arrayQuestions.length; i++) {
-        var question = document.getElementById("question");
-        question.innerHTML = arrayQuestions[i].question;
+    var question = document.getElementById("questionEl");
+    if (currentQuestion <= arrayQuestions.length - 1) {
+        question.textContent = arrayQuestions[currentQuestion].question;
+        console.log(question.textContent)
+        console.log(arrayQuestions.length)
+        console.log(currentQuestion)
+        currentQuestion++
     }
+}
+
+function loopAnswers() {
+    var answer1 = document.getElementById("btn1El");
+    answer1.textContent = allAnswers[0]
+    var answer2 = document.getElementById("btn2El");
+    answer2.textContent = allAnswers[1]
 
 
 }
 
 
 function startQuiz() {
-    var startBtn = document.getElementById("questionSection");
-    if (startBtn.style.display == "none") {
-        startBtn.style.display = "block";
-    }
-    else {
-        startBtn.style.display = "block";
-    }
+    var startBtn = document.getElementById("questionSectionEl");
+    startBtn.style.display = "block";
+    loopQuestions()
+    loopAnswers()
 }
+// Attach event listeners to buttons
+// document.getElementById("btn1El").addEventListener("click",btn1El);
+
+// Question handling
+
+
+// 
