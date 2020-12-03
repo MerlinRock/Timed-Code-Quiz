@@ -12,28 +12,30 @@ wrong = 0
 var arrayQuestions = [
     {
         question: "Commonly used data types DO NOT include:",
-        answer1: "alerts"
+        choices: ["booleans", "integers", "strings", "alerts"],
+        answer1: "alerts",
     },
     {
         question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-        answer2: "console.log"
+        choices: ["JavaScript", "terminal/bash", "console.log", "for loops"],
+        answer2: "console.log",
     },
     {
         question: "The condition in an if/else statement is enclosed within _____.",
+        choices: ["curly brackets", "quotes", "parentheses", "square brackets"],
         answer3: "parentheses"
     },
     {
-        question: "String values must be enclosed within _____ when being assigned to variables.",
+        question: "Strings values must be enclosed within _____ when being assigned to variables.",
+        choices: ["for loops", "commas", "curly brackets", "quotes"],
         answer4: "quotes"
     },
     {
         question: "Arrays in JavaScript can be used to store _____.",
+        choices: ["strings", "booleans", "integers", "all of the above"],
         answer5: "all of the above"
     }
 ]
-
-var allAnswers = ["booleans", "integers", "strings", "JavaScript", "terminal/bash", "all of the above", "alerts", "for loops", "console.log", "commas", "curly brackets", "quotes", "parentheses", "square brackets", ""]
-
 
 
 function loopQuestions() {
@@ -48,15 +50,19 @@ function loopQuestions() {
 }
 
 function loopAnswers() {
-    var answer1 = document.getElementById("btn1El");
-    answer1.textContent = allAnswers[0]
-    var answer2 = document.getElementById("btn2El");
-    answer2.textContent = allAnswers[1]
+
+    for (i = 0; i <= 3; i++) {
+        for (j = 1; j <= 4; j++) {
+            var choices = document.getElementById("btn" + j + "El")
+        }
+        choices.textContent = arrayQuestions[currentQuestion].choices[i];
+    }
 
 
 }
 
-
+// On clicking start, the question section appears and the first question and answer choices load.
+// Also the tmer begins to count down.
 function startQuiz() {
     var startBtn = document.getElementById("questionSectionEl");
     startBtn.style.display = "block";
