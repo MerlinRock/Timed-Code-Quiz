@@ -16,12 +16,16 @@
         
         <h1 class="text-center">JavaScript Fundamentals Quiz</h1>
 
-        <section class=myStartButton>
-            <button onclick="startQuiz()" id="start" class="startBtn">Start Quiz</button>
+        <section rows="1" class=myStartButton>
+            <p>
+            <button class="scores">View Scores</button>
+            <button onclick="startQuiz(), loopQuestions()" id="start" class="startBtn">Start Quiz</button>
+            <textarea class="timerBox" rows="1">Timer</textarea>
+            </p>
         </section>
 
         <section id="questionSection" class="hidden">
-            <p id="question" class="questions col-12">Hello World!
+            <p id="question" class="questions col-12">Question
                 <card></card>
             </p>
 

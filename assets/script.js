@@ -2,20 +2,18 @@
 
 // var questionsec = document.querySelector("#questionSection")
 
-// let arrayQuestions = [
+var score = 0
+
+// list of available questions
+var arrayQuestions = [
+    "Commonly used data types DO NOT include:",
+     "A very useful tool used during development and debugging for printing content to the debugger is:",
+     "The condition in an if/else statement is enclosed within _____.",
+     "String values must be enclosed within _____ when being assigned to variables.",
+     "Arrays in JavaScript can be used to store _____."
+]
 
 
-
-
-
-
-
-
-
-
-
-
-// ]
 
 // function.promt() {
 //     // Go through a collection of questions
@@ -28,6 +26,15 @@
 
 
 // }
+
+function loopQuestions() {
+    for (i = 0; i <= arrayQuestions.length; i++) {
+        var question = document.getElementById("question");
+        question.innerHTML = arrayQuestions[i].question;
+    }
+
+
+}
 
 
 function startQuiz() {

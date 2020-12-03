@@ -1,14 +1,31 @@
 .text-center {
     background-color:darkred;
-    height: 55px;
 }
 
 h1 {
     color:white;
 }
 
+.timerBox {
+    float: right;
+    text-align: right;
+    width: 85px;
+    color: red  ;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: lightgrey ;
+    border: none;
+    margin-right: 3px;
+}
+
 body {
     background-color: lightgray;
+}
+
+.scores {
+    float: left;
+    border: none;
+    background-color: lightgrey;
 }
 
 button {
@@ -20,6 +37,7 @@ button {
 .myStartButton {
     margin-bottom: 40px;
     text-align: center;
+    
 }
 
 .myButtons {
@@ -40,6 +58,8 @@ button {
 
 .startBtn {
     border-radius: 6px;
+    background-color: green;
+    color: white;
 }
 
 .allOtherBtn {
