@@ -11,39 +11,60 @@
 </head>
 
 <body>
-    <script src ="assets/script.js"></script>
     <main>
         
         <h1 class="text-center">JavaScript Fundamentals Quiz</h1>
-
+        
         <section rows="1" class=myStartButton>
             <p>
-            <button class="scores">View Scores</button>
-            <button onclick="startQuiz()" id="startEl" class="startBtn">Start Quiz</button>
-            <button class="timerBox" rows="1">Timer</button>
+                <button id="scoreEl" class="scores">View Scores</button>
+                <button onclick="startQuiz()" id="startEl" class="startBtn">Start Quiz</button>
+                <button id="timerEl" class="timerBox" rows="1"></button>
             </p>
         </section>
 
+
         <section id="questionSectionEl" class="hidden">
             <p id="questionEl" class="questions col-12"></p>
+            
+            <section class="myButtons">
+                <button id="btnEl" type="button" class="allOtherBtn">Click Me!!!!!!!!!!!!!!</button>
+            </section>
+            <section class="myButtons">
+                <button id="btnEl" type="button" class="allOtherBtn">Click Me!????</button>
+            </section>
+            <section class="myButtons">
+                <button id="btnEl" type="button" class="allOtherBtn">Click Me!</button>
+            </section>
+            <section class="myButtons">
+                <button id="btnEl" type="button" class="allOtherBtn">Click Me!</button>
+            </section>
+            
+        </section>
 
+
+        
+        <!-- <section id="questionSectionEl" class="hidden">
+            <p id="questionEl" class="questions col-12"></p>
+            
             <section class="myButtons">
                 <button onclick="loopQuestions()" id="btn1El" type="button" class="allOtherBtn">Click Me!!!!!!!!!!!!!!</button>
             </section>
             <section class="myButtons">
-                <button id="btn2El" type="button" class="allOtherBtn">Click Me!????</button>
+                <button onclick="loopQuestions()" id="btn2El" type="button" class="allOtherBtn">Click Me!????</button>
             </section>
             <section class="myButtons">
-                <button id="btn3El" type="button" class="allOtherBtn">Click Me!</button>
+                <button onclick="loopQuestions()" id="btn3El" type="button" class="allOtherBtn">Click Me!</button>
             </section>
             <section class="myButtons">
-                <button id="btn4El" type="button" class="allOtherBtn">Click Me!</button>
+                <button onclick="loopQuestions()" id="btn4El" type="button" class="allOtherBtn">Click Me!</button>
             </section>
-
-        </section>
-
-
+            
+        </section> -->
+        
+        
     </main>
+    <script src ="assets/script.js"></script>
 </body>
 
 </html>
