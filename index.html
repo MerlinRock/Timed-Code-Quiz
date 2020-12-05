@@ -10,35 +10,27 @@
     <link rel="stylesheet" href="assets/style.css" />
 </head>
 
-<body>
+<body class="body">
     <main>
         
         <h1 class="text-center">JavaScript Fundamentals Quiz</h1>
         
         <section rows="1" class=myStartButton>
-            <p>
+
+            <section>
                 <button id="scoreEl" class="scores">View Scores</button>
-                <button onclick="startQuiz()" id="startEl" class="startBtn">Start Quiz</button>
-                <button id="timerEl" class="timerBox" rows="1"></button>
+                <button id="timerEl" class="timerBox" rows="1">45</button>
+            </section>
+
+
+            <p>
+                <button id="startEl" class="startBtn hidden">Start Quiz</button>
             </p>
         </section>
 
-
+        <!-- This is where my question buttons are placed with JavaScript -->
         <section id="questionSectionEl" class="hidden">
-            <p id="questionEl" class="questions col-12"></p>
             
-            <section class="myButtons">
-                <button id="btnEl" type="button" class="allOtherBtn">Click Me!!!!!!!!!!!!!!</button>
-            </section>
-            <section class="myButtons">
-                <button id="btnEl" type="button" class="allOtherBtn">Click Me!????</button>
-            </section>
-            <section class="myButtons">
-                <button id="btnEl" type="button" class="allOtherBtn">Click Me!</button>
-            </section>
-            <section class="myButtons">
-                <button id="btnEl" type="button" class="allOtherBtn">Click Me!</button>
-            </section>
             
         </section>
 

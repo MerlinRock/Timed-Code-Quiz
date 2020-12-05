@@ -1,16 +1,15 @@
-// var timer = setInterval(myTimer, 1000)
-
-// var questionsec = document.querySelector("#questionSectionEl")
-
-
+var startBtn = document.getElementById("startEl")
+// var addBtn = document.createElement("button")
 var currentQuestion = 0
 var currentChoices = 0
 var correct = 0
 var wrong = 0
 var timer
-var addBtn = document.createElement("button")
 
-document.getElementById("startEl").addEventListener("click", addChoiceBtns);
+// var nameEl = document.querySelector("#name");
+// var questionBtnEl = document.getElementById("")
+
+startBtn.addEventListener("click", quiz);
 
 // list of available questions
 var arrayQuestions = [
@@ -41,63 +40,98 @@ var arrayQuestions = [
     }
 ]
 
+// This section was my first attemp at loading my questions and answer choices.
+// function loopQuestions() {
+//     var question = document.getElementById("questionEl");
+//     if (currentQuestion <= arrayQuestions.length - 1) {
+//         question.textContent = arrayQuestions[currentQuestion].question;
+//         currentQuestion++
+//         loopAnswers()
+//     }
+// }
 
-function loopQuestions() {
-    var question = document.getElementById("questionEl");
+// function loopAnswers() {
+//     if(currentChoices <= arrayQuestions.length -1) {
+//         var btn1 = document.getElementById("btn1El");
+//         btn1.textContent = arrayQuestions[currentChoices].choices[0]
+//         var btn2 = document.getElementById("btn2El");
+//         btn2.textContent = arrayQuestions[currentChoices].choices[1]
+//         var btn3 = document.getElementById("btn3El");
+//         btn3.textContent = arrayQuestions[currentChoices].choices[2]
+//         var btn4 = document.getElementById("btn4El");
+//         btn4.textContent = arrayQuestions[currentChoices].choices[3]
+//         console.log(btn1.textContent)
+//         currentChoices++
+//     } else {
+
+//     }
+// }
+
+
+
+
+function quiz(event) {
+    event.preventDefault();
+    // startBtn.style.display = "none";
+
+    var choices = arrayQuestions[currentQuestion].choices
+    var questions = arrayQuestions[currentQuestion].question
+    var answers = arrayQuestions[currentQuestion].answer
+
     if (currentQuestion <= arrayQuestions.length - 1) {
-        question.textContent = arrayQuestions[currentQuestion].question;
+        var addQuestion = document.createElement("p")
+        addQuestion.textContent = arrayQuestions[currentQuestion].question;
+        console.log(addQuestion.textContent);
+        document.body.appendChild(addQuestion);
         currentQuestion++
-        loopAnswers()
-    }
-}
 
-function loopAnswers() {
-    if(currentChoices <= arrayQuestions.length -1) {
-        var btn1 = document.getElementById("btn1El");
-        btn1.textContent = arrayQuestions[currentChoices].choices[0]
-        var btn2 = document.getElementById("btn2El");
-        btn2.textContent = arrayQuestions[currentChoices].choices[1]
-        var btn3 = document.getElementById("btn3El");
-        btn3.textContent = arrayQuestions[currentChoices].choices[2]
-        var btn4 = document.getElementById("btn4El");
-        btn4.textContent = arrayQuestions[currentChoices].choices[3]
-        console.log(btn1.textContent)
-        currentChoices++
-    } else {
-
-    }
-}
-var timerEl = document.getElementById("timerEl");
-function countDown() {
-    var timeLeft = 45
-    timer = setInterval(function() {
-        if(timeLeft <= 0) {
-            clearInterval(timer);
+        for (i = 0; i <= choices.length - 1; i++) {
+            console.log(choices)
+            addBtn = document.createElement("button")
+            addBtn
+            console.log(i);
+            addBtn.textContent = choices[i];
+            // addBtn.addEventListener("click", "w")
+            addBtn.style.color = "red"
+            document.body.appendChild(addBtn);
+            currentChoices++
         }
-        timeLeft--;
-        timerEl.innerHTML = timeLeft;
-        // console.log(timeLeft)
-    } ,1000);
-    
-    
+    }
 }
-function addChoiceBtns(event)
-var choices = arrayQuestions[currentQuestion].choices;
-console.log(choices);
-for(i = 0; i <= choices.length; i++) {
-    console.log(choices.length);
-    addBtn.textContent = choices[i];
-}
+
+
+
+
 
 // On clicking start, the question section appears and the first question and answer choices load.
 // Also the tmer begins to count down.
-// function startQuiz() {
-//     var startBtn = document.getElementById("questionSectionEl");
-//     startBtn.style.display = "block";
-//     loopQuestions()
-//     countDown()
-// }
-// Attach event listeners to buttons
-// document.getElementById("btn1El").addEventListener("click",btn1El);
+function startQuiz() {
+    
+    // countDown()
+}
 
-// Question handling
+// function hideStartBtn() {
+    //     startBtn.classList.add("hidden")
+    
+    // }
+    // Attach event listeners to buttons
+    // document.getElementById("btn1El").addEventListener("click",btn1El);
+    
+    
+    // Question handling
+    
+    
+    // Timer countdown
+    var timerEl = document.getElementById("timerEl");
+    var timer = setInterval(countDown, 1000);
+    function countDown() {
+        var timeLeft = 45
+            timer = setInterval(function () {
+                timeLeft--;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    console.log("here!")
+                }
+                timerEl.innerHTML = timeLeft;
+            }, 1000);
+        }

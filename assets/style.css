@@ -52,7 +52,7 @@ button {
 }
 
 .hidden {
-    display: none;
+    /* display: none; */
     background-color:darkgrey;
 }
 
@@ -66,3 +66,9 @@ button {
     border-radius: 10px;
     margin-bottom: 2px;
 }
+
+body {
+    text-align: center;
+    
+}
+
