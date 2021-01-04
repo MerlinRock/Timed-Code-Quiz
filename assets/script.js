@@ -1,13 +1,15 @@
 var startBtn = document.getElementById("startEl")
-// var addBtn = document.createElement("button")
+var questionBlock = document.getElementById("questionSectionEl")
+
 var currentQuestion = 0
 var currentChoices = 0
 var correct = 0
 var wrong = 0
 var timer
 var timeLeft = 45
+var buttonNum = 0
 
-// var nameEl = document.querySelector("#name");
+
 // var questionBtnEl = document.getElementById("")
 
 startBtn.addEventListener("click", quiz);
@@ -42,31 +44,57 @@ var arrayQuestions = [
 ]
 
 function quiz(event) {
-    event.preventDefault();
-    // startBtn.style.display = "none";
+    // event.preventDefault();
+    startBtn.style.display = "none";
 
     var choices = arrayQuestions[currentQuestion].choices
     var questions = arrayQuestions[currentQuestion].question
     var answers = arrayQuestions[currentQuestion].answer
 
     if (currentQuestion <= arrayQuestions.length - 1) {
+
         var addQuestion = document.createElement("p")
         addQuestion.textContent = arrayQuestions[currentQuestion].question;
+        addQuestion.setAttribute("id", "questionEl")
         console.log(addQuestion.textContent);
-        document.body.appendChild(addQuestion);
+        questionBlock.appendChild(addQuestion);
         currentQuestion++
 
         for (i = 0; i <= choices.length - 1; i++) {
             console.log(choices)
             addBtn = document.createElement("button")
-            addBtn
             console.log(i);
             addBtn.textContent = choices[i];
-            // addBtn.addEventListener("click", "w")
-            addBtn.style.color = "red"
-            document.body.appendChild(addBtn);
+            addBtn.setAttribute("id", "btnEl" + i)
+            addBtn.addEventListener("click", nextQuestion)
+            questionBlock.appendChild(addBtn);
             currentChoices++
+
+            if (document.querySelectorAll("btnEl").click == true) {
+                console.log("Clicked!")
+                questionBlock.removeChild(addQuestion);
+
+            }
         }
+    }
+}
+
+function nextQuestion(event) {
+    event.preventDefault();
+    if (document.getElementById("btnEl0")) {
+        var questionBtn = document.getElementById("questionEl")
+        var btn1 = document.getElementById("btnEl0")
+        var btn2 = document.getElementById("btnEl1")
+        var btn3 = document.getElementById("btnEl2")
+        var btn4 = document.getElementById("btnEl3")
+
+        console.log("Clicked!")
+        questionBlock.removeChild(questionBtn);
+        questionBlock.removeChild(btn1);
+        questionBlock.removeChild(btn2);
+        questionBlock.removeChild(btn3);
+        questionBlock.removeChild(btn4);
+        quiz()
     }
 }
 
@@ -96,7 +124,7 @@ function startQuiz() {
 var timerEl = document.getElementById("timerEl");
 var timer = setInterval(countDown, 1000);
 
-function countDown() {
+function countDown(event) {
     timeLeft--;
     if (timeLeft <= 0) {
         clearInterval(timer);
