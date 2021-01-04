@@ -5,6 +5,7 @@ var currentChoices = 0
 var correct = 0
 var wrong = 0
 var timer
+var timeLeft = 45
 
 // var nameEl = document.querySelector("#name");
 // var questionBtnEl = document.getElementById("")
@@ -39,36 +40,6 @@ var arrayQuestions = [
         answer: "all of the above"
     }
 ]
-
-// This section was my first attemp at loading my questions and answer choices.
-// function loopQuestions() {
-//     var question = document.getElementById("questionEl");
-//     if (currentQuestion <= arrayQuestions.length - 1) {
-//         question.textContent = arrayQuestions[currentQuestion].question;
-//         currentQuestion++
-//         loopAnswers()
-//     }
-// }
-
-// function loopAnswers() {
-//     if(currentChoices <= arrayQuestions.length -1) {
-//         var btn1 = document.getElementById("btn1El");
-//         btn1.textContent = arrayQuestions[currentChoices].choices[0]
-//         var btn2 = document.getElementById("btn2El");
-//         btn2.textContent = arrayQuestions[currentChoices].choices[1]
-//         var btn3 = document.getElementById("btn3El");
-//         btn3.textContent = arrayQuestions[currentChoices].choices[2]
-//         var btn4 = document.getElementById("btn4El");
-//         btn4.textContent = arrayQuestions[currentChoices].choices[3]
-//         console.log(btn1.textContent)
-//         currentChoices++
-//     } else {
-
-//     }
-// }
-
-
-
 
 function quiz(event) {
     event.preventDefault();
@@ -106,32 +77,30 @@ function quiz(event) {
 // On clicking start, the question section appears and the first question and answer choices load.
 // Also the tmer begins to count down.
 function startQuiz() {
-    
+
     // countDown()
 }
 
 // function hideStartBtn() {
-    //     startBtn.classList.add("hidden")
-    
-    // }
-    // Attach event listeners to buttons
-    // document.getElementById("btn1El").addEventListener("click",btn1El);
-    
-    
-    // Question handling
-    
-    
-    // Timer countdown
-    var timerEl = document.getElementById("timerEl");
-    var timer = setInterval(countDown, 1000);
-    function countDown() {
-        var timeLeft = 45
-            timer = setInterval(function () {
-                timeLeft--;
-                if (timeLeft <= 0) {
-                    clearInterval(timer);
-                    console.log("here!")
-                }
-                timerEl.innerHTML = timeLeft;
-            }, 1000);
-        }
+//     startBtn.classList.add("hidden")
+
+// }
+// Attach event listeners to buttons
+// document.getElementById("btn1El").addEventListener("click",btn1El);
+
+
+// Question handling
+
+
+// Timer countdown
+var timerEl = document.getElementById("timerEl");
+var timer = setInterval(countDown, 1000);
+
+function countDown() {
+    timeLeft--;
+    if (timeLeft <= 0) {
+        clearInterval(timer);
+        console.log("here!")
+    }
+    timerEl.innerHTML = timeLeft;
+}
